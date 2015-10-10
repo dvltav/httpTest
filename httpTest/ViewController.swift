@@ -42,9 +42,9 @@ class ViewController: UIViewController {
   
     
     @IBAction func slider(sender: UISlider) {
-        var i = Int(sender.value)
+        let i = Int(sender.value)
         
-        println("Slider valude = \(i)")
+        print("Slider valude = \(i)")
         getWeather(i*3)
         
     }
@@ -71,16 +71,16 @@ class ViewController: UIViewController {
             
             if error != nil
             {
-                println("error=\(error)")
+                print("error=\(error)")
                 return
             }
             
             // You can print out response object
-            println("response = \(response)")
+            print("response = \(response)")
             
             // Print out response body
-            let responseString = NSString(data: data, encoding: NSUTF8StringEncoding)
-            println("responseString = \(responseString)")
+            let responseString = NSString(data: data!, encoding: NSUTF8StringEncoding)
+            print("responseString = \(responseString)")
             
             //Let's convert response sent from a server side script to a NSDictionary object:
             self.tempDisplay.text = "0"
@@ -88,12 +88,20 @@ class ViewController: UIViewController {
 
             
             var error: NSError? = nil;
-            var jsonObject: AnyObject? = NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.allZeros, error: &error)
+            var jsonObject: AnyObject?
+            do {
+                jsonObject = try NSJSONSerialization.JSONObjectWithData(data!, options: NSJSONReadingOptions())
+            } catch var error1 as NSError {
+                error = error1
+                jsonObject = nil
+            } catch {
+                fatalError()
+            }
             
             var date = (jsonObject as! NSDictionary)["date"] as! String
             var outTemp = (jsonObject as! NSDictionary)["outTemp"]as! Double
             var windGust = (jsonObject as! NSDictionary)["windGust"] as! Double
-            println("date: \(date)")
+            print("date: \(date)")
             
             dispatch_async(dispatch_get_main_queue(), {
                 self.tempDisplay.text = (NSString(format: "%.1f", outTemp) as String) + " º"

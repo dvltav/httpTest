@@ -7,13 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B443A64A1BC94AC2006B3227 /* bg.png in Resources */ = {isa = PBXBuildFile; fileRef = B443A6491BC94AC2006B3227 /* bg.png */; settings = {ASSET_TAGS = (); }; };
 		B463B64D1AD026A2005A86F8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B463B64C1AD026A2005A86F8 /* AppDelegate.swift */; };
 		B463B64F1AD026A2005A86F8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B463B64E1AD026A2005A86F8 /* ViewController.swift */; };
 		B463B6521AD026A2005A86F8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B463B6501AD026A2005A86F8 /* Main.storyboard */; };
 		B463B6541AD026A2005A86F8 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B463B6531AD026A2005A86F8 /* Images.xcassets */; };
 		B463B6571AD026A2005A86F8 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = B463B6551AD026A2005A86F8 /* LaunchScreen.xib */; };
 		B463B6631AD026A2005A86F8 /* httpTestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B463B6621AD026A2005A86F8 /* httpTestTests.swift */; };
-		B463B66F1AD109A6005A86F8 /* bg.png in Resources */ = {isa = PBXBuildFile; fileRef = B463B66E1AD109A6005A86F8 /* bg.png */; };
 		B46467F21AD7946300943CB6 /* DetailViewControler.swift in Sources */ = {isa = PBXBuildFile; fileRef = B46467F11AD7946300943CB6 /* DetailViewControler.swift */; };
 /* End PBXBuildFile section */
 
@@ -28,6 +28,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B443A6491BC94AC2006B3227 /* bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bg.png; sourceTree = "<group>"; };
 		B463B6471AD026A2005A86F8 /* httpTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = httpTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B463B64B1AD026A2005A86F8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B463B64C1AD026A2005A86F8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -38,7 +39,6 @@
 		B463B65C1AD026A2005A86F8 /* httpTestTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = httpTestTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B463B6611AD026A2005A86F8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B463B6621AD026A2005A86F8 /* httpTestTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = httpTestTests.swift; sourceTree = "<group>"; };
-		B463B66E1AD109A6005A86F8 /* bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = bg.png; path = ../../../../Downloads/bg.png; sourceTree = "<group>"; };
 		B46467F11AD7946300943CB6 /* DetailViewControler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewControler.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -81,7 +81,7 @@
 		B463B6491AD026A2005A86F8 /* httpTest */ = {
 			isa = PBXGroup;
 			children = (
-				B463B66E1AD109A6005A86F8 /* bg.png */,
+				B443A6491BC94AC2006B3227 /* bg.png */,
 				B463B64C1AD026A2005A86F8 /* AppDelegate.swift */,
 				B463B64E1AD026A2005A86F8 /* ViewController.swift */,
 				B463B6501AD026A2005A86F8 /* Main.storyboard */,
@@ -162,11 +162,14 @@
 		B463B63F1AD026A2005A86F8 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0620;
+				LastSwiftMigration = 0700;
+				LastSwiftUpdateCheck = 0700;
+				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = Dominik;
 				TargetAttributes = {
 					B463B6461AD026A2005A86F8 = {
 						CreatedOnToolsVersion = 6.2;
+						DevelopmentTeam = E6P4ZA6HCE;
 					};
 					B463B65B1AD026A2005A86F8 = {
 						CreatedOnToolsVersion = 6.2;
@@ -198,8 +201,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B443A64A1BC94AC2006B3227 /* bg.png in Resources */,
 				B463B6521AD026A2005A86F8 /* Main.storyboard in Resources */,
-				B463B66F1AD109A6005A86F8 /* bg.png in Resources */,
 				B463B6571AD026A2005A86F8 /* LaunchScreen.xib in Resources */,
 				B463B6541AD026A2005A86F8 /* Images.xcassets in Resources */,
 			);
@@ -283,6 +286,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -345,10 +349,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = httpTest/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.wellsfargo.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
@@ -358,10 +366,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = httpTest/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.wellsfargo.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
@@ -380,6 +392,7 @@
 				);
 				INFOPLIST_FILE = httpTestTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.wellsfargo.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/httpTest.app/httpTest";
 			};
@@ -395,6 +408,7 @@
 				);
 				INFOPLIST_FILE = httpTestTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.wellsfargo.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/httpTest.app/httpTest";
 			};
