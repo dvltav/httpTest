@@ -53,7 +53,7 @@ class ViewController: UIViewController {
     func getWeather(offset : Int) {
     
         
-        var url2 = "http://vltavsky.com:500/weatherJson.php"
+        let url2 = "http://bigpi.info:500/weatherJson.php"
         
         let myUrl = NSURL(string: url2);
         let request = NSMutableURLRequest(URL:myUrl!);
