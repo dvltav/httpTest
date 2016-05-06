@@ -45,10 +45,46 @@ class ViewController: UIViewController {
         let i = Int(sender.value)
         
         print("Slider valude = \(i)")
-        getWeather(i*3)
+        getWeather2(i*3)
         
     }
     
+    func getWeather2(offset : Int) {
+        
+        let myURL = NSURL(string: "http://bigpi.info:500/weatherJson.php")
+        let request = NSMutableURLRequest(URL: myURL!)
+        request.HTTPMethod = "POST"
+        
+        // Compose a query string
+        let postString = "offset=" + String(offset);
+        request.HTTPBody = postString.dataUsingEncoding(NSUTF8StringEncoding);
+    
+        
+        let task = NSURLSession.sharedSession().dataTaskWithRequest(request) { (data, response, error) -> Void in
+    
+            if let urlConent = data {
+                do {
+                let jsonResult = try NSJSONSerialization.JSONObjectWithData(urlConent, options: NSJSONReadingOptions.MutableContainers)
+ 
+                    let date = jsonResult["date"] as! String
+                    let outTemp = jsonResult["outTemp"]as! Double
+                    let windGust = jsonResult["windGust"] as! Double
+                    
+                    dispatch_async(dispatch_get_main_queue(), {
+                        self.tempDisplay.text = (NSString(format: "%.1f", outTemp) as String) + " º"
+                        self.windSpeed.text = (NSString(format: "%.0f", windGust) as String) + " mph"
+                        self.lastUpdated.text = date
+                    })
+
+                } catch {
+                    print("Error reading JSON")
+                } //do
+            } //let
+        }//task
+        
+        task.resume()
+        
+    }
     
     func getWeather(offset : Int) {
     
@@ -67,7 +103,7 @@ class ViewController: UIViewController {
         
         
         let task = NSURLSession.sharedSession().dataTaskWithRequest(request) {
-            data, response, error in
+        data, response, error in
             
             if error != nil
             {
